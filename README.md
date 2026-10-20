@@ -46,6 +46,10 @@
 - Source Java/Android trong repo dành cho người muốn kiểm tra hoặc tự build. **APK cài đặt lấy tại Releases**; không đưa keystore hay thông tin ký ứng dụng lên GitHub.
 - Dự án độc lập, không liên kết chính thức với Google hoặc Xiaomi.
 
+## Build từ mã nguồn
+
+Repo có thể build bằng Gradle 8.7, JDK 17 và Android SDK 34. Chạy `gradle assembleDebug` để tạo APK tại `app/build/outputs/apk/debug/app-debug.apk`. GitHub Actions cũng tự build khi push lên `main`, tạo pull request hoặc chạy thủ công; tải APK trong phần **Artifacts** của lần chạy workflow.
+
 ---
 
 ## English
@@ -78,5 +82,9 @@
 4. Review **Compatibility** and the **Event journal** when needed.
 
 **Limitations:** Results vary by device and ROM; Doze and independent FCM factors can still delay notifications. **100% push delivery is not guaranteed.** Some modern Android versions restrict installation of older-targeted APKs. Source code is in this repository; installable APKs are in **Releases**. Never publish signing keys.
+
+### Build from source
+
+Build with Gradle 8.7, JDK 17 and Android SDK 34 by running `gradle assembleDebug`. The APK is written to `app/build/outputs/apk/debug/app-debug.apk`. GitHub Actions builds on pushes to `main`, pull requests and manual runs; download the APK from that workflow run's **Artifacts**.
 
 *Independent utility — not affiliated with Google or Xiaomi.*
